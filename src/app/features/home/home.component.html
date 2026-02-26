@@ -1,0 +1,76 @@
+<section class="hero">
+  <!-- Background blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="hero-content">
+    <div class="avatar">JV</div>
+
+    <p class="overline">Welcome to my portfolio</p>
+    <h1>
+      <span class="name-first">Jenish</span>
+      <span class="name-last">Vekariya</span>
+    </h1>
+    <p class="title-badge">{{ profile.title }}</p>
+    <p class="summary">{{ profile.summary }}</p>
+
+    <div class="chips-row">
+      <span *ngFor="let chip of profile.chips" class="hero-chip">{{ chip }}</span>
+    </div>
+
+    <div class="actions">
+      <a mat-raised-button color="accent" routerLink="/contact" class="btn-cta">
+        <mat-icon>email</mat-icon> Get In Touch
+      </a>
+      <a mat-stroked-button routerLink="/projects" class="btn-outline">
+        <mat-icon>work</mat-icon> View Projects
+      </a>
+      <a mat-stroked-button [href]="profile.github" target="_blank" class="btn-outline">
+        <mat-icon>code</mat-icon> GitHub
+      </a>
+    </div>
+
+    <div class="social-strip">
+      <a [href]="'tel:' + profile.phone" class="social-link">
+        <mat-icon>phone</mat-icon> {{ profile.phone }}
+      </a>
+      <a [href]="'mailto:' + profile.email" class="social-link">
+        <mat-icon>email</mat-icon> {{ profile.email }}
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="orbit-ring ring-1">
+      <div class="orbit-dot" *ngFor="let t of ['Angular','NgRx','TS','RxJS']; let i = index"
+           [style.--i]="i" [style.--total]="4">{{ t }}</div>
+    </div>
+    <div class="center-icon">
+      <mat-icon>code</mat-icon>
+    </div>
+  </div>
+</section>
+
+<!-- Quick stats bar -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">1+</span>
+    <span class="stat-label">Year Experience</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-num">2+</span>
+    <span class="stat-label">Projects</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-num">10+</span>
+    <span class="stat-label">Technologies</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-num">8.44</span>
+    <span class="stat-label">B.Tech CPI</span>
+  </div>
+</div>

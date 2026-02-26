@@ -1,0 +1,49 @@
+<section class="education-section">
+  <div class="section-container">
+
+    <div class="section-header" appReveal>
+      <p class="section-overline">Academic</p>
+      <h2>Education</h2>
+      <div class="divider-bar"></div>
+    </div>
+
+    <div class="edu-grid">
+      <mat-card
+        *ngFor="let edu of educations"
+        class="edu-card mat-elevation-z2"
+        appReveal
+      >
+        <mat-card-content>
+          <div class="edu-inner">
+            <div class="edu-icon">
+              <mat-icon>{{ edu.icon }}</mat-icon>
+            </div>
+            <div class="edu-info">
+              <h3>{{ edu.degree }}</h3>
+              <p class="institute">{{ edu.institute }}</p>
+              <div class="edu-meta">
+                <span class="score-badge">{{ edu.score }}</span>
+                <span class="period">{{ edu.period }}</span>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Certificates -->
+    <div class="section-header cert-header" appReveal>
+      <p class="section-overline">Achievements</p>
+      <h2>Certificates &amp; <span>Hackathons</span></h2>
+      <div class="divider-bar"></div>
+    </div>
+
+    <div class="certs-grid">
+      <div *ngFor="let cert of certificates" class="cert-item" appReveal>
+        <mat-icon class="cert-icon">{{ cert.icon }}</mat-icon>
+        <span>{{ cert.title }}</span>
+      </div>
+    </div>
+
+  </div>
+</section>

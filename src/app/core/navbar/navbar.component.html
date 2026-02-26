@@ -1,0 +1,35 @@
+<mat-toolbar [class.scrolled]="scrolled()" class="navbar">
+  <span class="brand" routerLink="/">JV</span>
+
+  <!-- Desktop links -->
+  <span class="spacer"></span>
+  <div class="nav-links desktop-links">
+    <a
+      *ngFor="let link of navLinks"
+      mat-button
+      [routerLink]="link.path"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+    >
+      {{ link.label }}
+    </a>
+  </div>
+
+  <!-- Mobile menu -->
+  <button mat-icon-button class="mobile-menu-btn" [matMenuTriggerFor]="mobileMenu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #mobileMenu="matMenu">
+    <a
+      *ngFor="let link of navLinks"
+      mat-menu-item
+      [routerLink]="link.path"
+      routerLinkActive="active-menu-item"
+      [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+    >
+      {{ link.label }}
+    </a>
+  </mat-menu>
+</mat-toolbar>
+<!-- spacer so content doesn't hide under fixed toolbar -->
+<div class="toolbar-spacer"></div>

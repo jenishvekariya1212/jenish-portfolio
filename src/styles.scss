@@ -1,0 +1,112 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$portfolio-primary: mat.define-palette(mat.$indigo-palette, 700, 500, 900);
+$portfolio-accent:  mat.define-palette(mat.$cyan-palette, 500, 300, 700);
+$portfolio-warn:    mat.define-palette(mat.$red-palette);
+
+$portfolio-theme: mat.define-light-theme((
+  color: (
+    primary: $portfolio-primary,
+    accent:  $portfolio-accent,
+    warn:    $portfolio-warn,
+  ),
+  typography: mat.define-typography-config(
+    $font-family: 'Roboto, sans-serif'
+  ),
+  density: 0,
+));
+
+@include mat.all-component-themes($portfolio-theme);
+
+:root {
+  --primary:       #283593;
+  --primary-light: #3949AB;
+  --primary-dark:  #1a237e;
+  --accent:        #00BCD4;
+  --accent-light:  #4DD0E1;
+  --bg:            #F5F7FF;
+  --surface:       #FFFFFF;
+  --text-primary:  #1a1a2e;
+  --text-secondary:#546E7A;
+  --divider:       #E8EAF6;
+  --card-shadow:   0 2px 12px rgba(40,53,147,0.10);
+  --card-hover:    0 8px 32px rgba(40,53,147,0.18);
+  --radius:        12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+/* Shared utility classes */
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+
+  .section-overline {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    span { font-weight: 700; color: var(--primary); }
+  }
+
+  .divider-bar {
+    width: 64px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+}
+
+.mat-elevation-z2 { box-shadow: var(--card-shadow) !important; }
+
+/* tech chip */
+.tech-chip {
+  display: inline-block;
+  background: #E8EAF6;
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Roboto Mono', monospace;
+  margin: 3px;
+  border: 1px solid #C5CAE9;
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  &.visible { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 3px; }

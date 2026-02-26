@@ -1,0 +1,89 @@
+<section class="about-section">
+  <div class="section-container">
+
+    <div class="section-header" appReveal>
+      <p class="section-overline">Who I Am</p>
+      <h2>About <span>Me</span></h2>
+      <div class="divider-bar"></div>
+    </div>
+
+    <div class="about-layout">
+      <!-- Avatar side -->
+      <div class="avatar-side" appReveal>
+        <div class="avatar-wrap">
+          <div class="avatar-circle">JV</div>
+          <div class="avatar-ring"></div>
+        </div>
+        <div class="quick-facts">
+          <div class="fact-item">
+            <mat-icon>work</mat-icon>
+            <div>
+              <span class="fact-label">Role</span>
+              <span class="fact-value">Angular Developer</span>
+            </div>
+          </div>
+          <div class="fact-item">
+            <mat-icon>location_on</mat-icon>
+            <div>
+              <span class="fact-label">Location</span>
+              <span class="fact-value">Rajkot, Gujarat</span>
+            </div>
+          </div>
+          <div class="fact-item">
+            <mat-icon>school</mat-icon>
+            <div>
+              <span class="fact-label">Education</span>
+              <span class="fact-value">B.Tech CSE – Darshan University</span>
+            </div>
+          </div>
+          <div class="fact-item">
+            <mat-icon>translate</mat-icon>
+            <div>
+              <span class="fact-label">Languages</span>
+              <span class="fact-value">{{ profile.languages.join(', ') }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text side -->
+      <div class="info-side" appReveal>
+        <h3>Hello! I'm <span>Jenish Vekariya</span></h3>
+        <p class="about-text">{{ profile.summary }}</p>
+        <p class="about-text">
+          I specialize in building scalable, responsive Angular applications with a strong focus on
+          performance, clean architecture, and excellent user experience. With hands-on experience in
+          NgRx state management, RESTful API integration, and Angular Material, I enjoy turning complex
+          requirements into smooth, elegant interfaces.
+        </p>
+        <p class="about-text">
+          Outside of Angular, I have a background in ASP.NET Core, Python, and SQL, giving me a
+          well-rounded full-stack perspective. I'm passionate about learning new technologies and
+          continuously improving my craft.
+        </p>
+
+        <div class="contact-pills">
+          <a [href]="'mailto:' + profile.email" class="pill">
+            <mat-icon>email</mat-icon> {{ profile.email }}
+          </a>
+          <a [href]="'tel:' + profile.phone" class="pill">
+            <mat-icon>phone</mat-icon> {{ profile.phone }}
+          </a>
+        </div>
+
+        <div class="about-actions">
+          <a mat-raised-button color="primary" routerLink="/experience">
+            <mat-icon>work</mat-icon> View Experience
+          </a>
+          <a mat-stroked-button color="primary" [href]="profile.github" target="_blank">
+            <mat-icon>code</mat-icon> GitHub
+          </a>
+          <a mat-stroked-button color="primary" [href]="profile.linkedin" target="_blank">
+            <mat-icon>link</mat-icon> LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

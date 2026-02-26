@@ -1,0 +1,45 @@
+<section class="experience-section">
+  <div class="section-container">
+
+    <div class="section-header" appReveal>
+      <p class="section-overline">Career</p>
+      <h2>Work <span>Experience</span></h2>
+      <div class="divider-bar"></div>
+    </div>
+
+    <div class="timeline">
+      <div *ngFor="let exp of experiences; let i = index" class="timeline-item" appReveal>
+        <div class="timeline-connector">
+          <div class="timeline-dot">
+            <mat-icon>business</mat-icon>
+          </div>
+          <div class="timeline-line"></div>
+        </div>
+
+        <mat-card class="exp-card mat-elevation-z2">
+          <mat-card-content>
+            <div class="exp-header">
+              <div>
+                <h3 class="company">{{ exp.company }}</h3>
+                <p class="role">{{ exp.role }}</p>
+              </div>
+              <span class="period-badge">{{ exp.period }}</span>
+            </div>
+
+            <ul class="exp-points">
+              <li *ngFor="let point of exp.points">
+                <mat-icon class="point-icon">chevron_right</mat-icon>
+                <span>{{ point }}</span>
+              </li>
+            </ul>
+
+            <div class="tech-row">
+              <span *ngFor="let t of exp.technologies" class="tech-chip">{{ t }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+</section>

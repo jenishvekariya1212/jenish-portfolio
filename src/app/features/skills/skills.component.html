@@ -1,0 +1,29 @@
+<section class="skills-section">
+  <div class="section-container">
+
+    <div class="section-header" appReveal>
+      <p class="section-overline">Expertise</p>
+      <h2>Technical <span>Skills</span></h2>
+      <div class="divider-bar"></div>
+    </div>
+
+    <div class="skills-grid">
+      <mat-card
+        *ngFor="let group of skillGroups"
+        class="skill-card mat-elevation-z2"
+        appReveal
+      >
+        <mat-card-content>
+          <div class="skill-icon-wrapper">
+            <mat-icon>{{ group.icon }}</mat-icon>
+          </div>
+          <h3>{{ group.title }}</h3>
+          <div class="tag-list">
+            <span *ngFor="let tag of group.tags" class="skill-tag">{{ tag }}</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+</section>

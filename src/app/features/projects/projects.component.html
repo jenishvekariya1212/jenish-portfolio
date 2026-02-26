@@ -1,0 +1,53 @@
+<section class="projects-section">
+  <div class="section-container">
+
+    <div class="section-header" appReveal>
+      <p class="section-overline">Portfolio</p>
+      <h2>Featured <span>Projects</span></h2>
+      <div class="divider-bar"></div>
+    </div>
+
+    <div class="projects-grid">
+      <mat-card
+        *ngFor="let project of projects"
+        class="project-card mat-elevation-z2"
+        appReveal
+      >
+        <!-- Gradient header -->
+        <div class="project-banner" [style.background]="project.color">
+          <span class="project-badge">{{ project.badge }}</span>
+          <h3>{{ project.title }}</h3>
+          <p class="project-sub">{{ project.subtitle }}</p>
+        </div>
+
+        <mat-card-content class="project-body">
+          <p class="project-desc">{{ project.description }}</p>
+
+          <h4 class="responsibilities-title">
+            <mat-icon>task_alt</mat-icon> Key Responsibilities
+          </h4>
+          <ul class="responsibility-list">
+            <li *ngFor="let r of project.responsibilities">
+              <mat-icon>check_circle_outline</mat-icon>
+              <span>{{ r }}</span>
+            </li>
+          </ul>
+
+          <div class="stack-section">
+            <p class="stack-label">TECH STACK</p>
+            <div class="stack-chips">
+              <span *ngFor="let s of project.stack" class="tech-chip">{{ s }}</span>
+            </div>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions *ngIf="project.link" class="project-actions">
+          <a mat-stroked-button color="primary" [href]="project.link" target="_blank">
+            <mat-icon>open_in_new</mat-icon> View Project
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+</section>
