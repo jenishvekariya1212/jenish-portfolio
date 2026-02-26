@@ -71,13 +71,13 @@
           <form *ngIf="!sent" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Your Name</mat-label>
-              <input matInput [(ngModel)]="name" name="name" required placeholder="Jenish Vekariya"/>
+              <input matInput [(ngModel)]="name" name="name" required placeholder="Enter Your Name"/>
               <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Email Address</mat-label>
-              <input matInput [(ngModel)]="email" name="email" type="email" required placeholder="you@example.com"/>
+              <input matInput [(ngModel)]="email" name="email" type="email" required placeholder="Enter Your Email"/>
               <mat-icon matSuffix>email</mat-icon>
             </mat-form-field>
 
